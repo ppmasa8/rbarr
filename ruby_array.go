@@ -11,3 +11,13 @@ func (p *intArray) pop() int {
 	*p = slice
 	return last
 }
+
+// instance method Array#shift
+// shift -> object | nil
+func (p *intArray) shift() int {
+	slice := *p
+	first := slice[0]
+	slice = slice[1:]
+	*p = slice
+	return first
+}
