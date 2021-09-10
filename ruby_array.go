@@ -21,3 +21,13 @@ func (p *intArray) shift() int {
 	*p = slice
 	return first
 }
+
+// instance method Array#append
+// push(*obj) -> self
+func (p *intArray) push(val ...int) {
+	slice := *p
+	for _, v := range val {
+		slice = append(slice, v)
+	}
+	*p = slice
+}
