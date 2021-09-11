@@ -31,3 +31,9 @@ func (p *intArray) push(val ...int) {
 	}
 	*p = slice
 }
+
+func (p *intArray) unshift(val ...int) {
+	slice := *p
+	slice = append(slice[:0], val...)
+	*p = slice
+}

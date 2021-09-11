@@ -34,3 +34,14 @@ func Test_push(t *testing.T) {
 		}
 	}
 }
+
+func Test_unshift(t *testing.T) {
+	var arr intArray = intArray{1, 2, 3 ,4, 5}
+	expect := intArray{6, 7, 8, 1, 2, 3 ,4, 5}
+	arr.unshift(6, 7, 8)
+	for i, _ := range arr {
+		if arr[i] != expect[i] {
+			t.Errorf("result=%v, index=%v", arr, i)
+		}
+	}
+}
