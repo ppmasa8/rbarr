@@ -1,4 +1,4 @@
-package array
+package rbarr
 
 type intArray []int
 
