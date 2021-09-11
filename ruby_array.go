@@ -32,6 +32,8 @@ func (p *intArray) push(val ...int) {
 	*p = slice
 }
 
+// instance method Array#unshift
+// unshift(*obj) -> self
 func (p *intArray) unshift(val ...int) {
 	slice := *p
 	slice = append(slice[:0], val...)
