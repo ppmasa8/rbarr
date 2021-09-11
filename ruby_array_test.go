@@ -47,6 +47,17 @@ func Test_int_unshift(t *testing.T) {
 	}
 }
 
+func Test_int_uniq(t *testing.T) {
+	var arr intArray = intArray{1, 1, 3 ,4, 5}
+	expect := intArray{1, 3 ,4, 5}
+	arr.uniq()
+	for i, _ := range arr {
+		if arr[i] != expect[i] {
+			t.Errorf("result=%v, index=%v", arr, i)
+		}
+	}
+}
+
 
 // str
 func Test_str_pop(t *testing.T) {
@@ -86,6 +97,17 @@ func Test_str_unshift(t *testing.T) {
 	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}
 	expect := strArray{"thursday", "friday", "saturday", "sunday", "monday", "tuesday", "wednesday", "thursday"}
 	arr.unshift("thursday", "friday", "saturday")
+	for i, _ := range arr {
+		if arr[i] != expect[i] {
+			t.Errorf("result=%v, index=%v", arr, i)
+		}
+	}
+}
+
+func Test_str_uniq(t *testing.T) {
+	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "sunday"}
+	expect := strArray{"sunday", "monday", "tuesday", "wednesday"}
+	arr.uniq()
 	for i, _ := range arr {
 		if arr[i] != expect[i] {
 			t.Errorf("result=%v, index=%v", arr, i)

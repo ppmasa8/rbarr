@@ -44,7 +44,19 @@ func (p *intArray) unshift(val ...int) {
 	*p = slice
 }
 
+func (p *intArray) uniq() {
+	temp := *p
+	m := make(map[int]bool)
+	var uniq []int
 
+	for _, v := range temp {
+		if !m[v] {
+			m[v] = true
+			uniq = append(uniq, v)
+		}
+	}
+	*p = uniq
+}
 
 
 /* string */
@@ -86,4 +98,16 @@ func (p *strArray) unshift(val ...string) {
 	*p = slice
 }
 
+func (p *strArray) uniq() {
+	temp := *p
+	m := make(map[string]bool)
+	var uniq []string
 
+	for _, v := range temp {
+		if !m[v] {
+			m[v] = true
+			uniq = append(uniq, v)
+		}
+	}
+	*p = uniq
+}
