@@ -2,6 +2,10 @@ package rbarr
 
 type intArray []int
 
+type strArray []string
+
+
+/* int */
 // instance method Array#pop
 // pop -> object | nil
 func (p *intArray) pop() int {
@@ -39,3 +43,47 @@ func (p *intArray) unshift(val ...int) {
 	slice = append(slice[:0], val...)
 	*p = slice
 }
+
+
+
+
+/* string */
+// instance method Array#pop
+// pop -> object | nil
+func (p *strArray) pop() string {
+	slice := *p
+	last  := slice[len(slice)-1]
+	slice = slice[:len(slice)-1]
+	*p = slice
+	return last
+}
+
+// instance method Array#shift
+// shift -> object | nil
+func (p *strArray) shift() string {
+	slice := *p
+	first := slice[0]
+	slice = slice[1:]
+	*p = slice
+	return first
+}
+
+// instance method Array#append
+// push(*obj) -> self
+func (p *strArray) push(val ...string) {
+	slice := *p
+	for _, v := range val {
+		slice = append(slice, v)
+	}
+	*p = slice
+}
+
+// instance method Array#unshift
+// unshift(*obj) -> self
+func (p *strArray) unshift(val ...string) {
+	slice := *p
+	slice = append(slice[:0], val...)
+	*p = slice
+}
+
+
