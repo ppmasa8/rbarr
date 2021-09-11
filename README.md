@@ -21,6 +21,10 @@ array.shift()         // return 1, array = [2, 3, 4, 5]
 array.push(6, 7)      // return nil, array = [1, 2, 3, 4, 5, 6, 7]
 
 array.unshift(0, 1)   // return nil, array = [0, 1, 1, 2, 3, 4, 5]
+
+array := [5]int{1, 1, 3, 4, 5}
+
+array.uniq()          // return nil, array = [1, 3, 4, 5]
 ```
 
 ## License
