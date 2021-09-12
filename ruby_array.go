@@ -58,6 +58,16 @@ func (p *intArray) uniq() {
 	*p = uniq
 }
 
+func (p *intArray) sum() int {
+	temp := *p
+	var sum int
+
+	for _, v := range temp {
+		sum = sum + v
+	}
+	return sum
+}
+
 
 /* string */
 // instance method Array#pop

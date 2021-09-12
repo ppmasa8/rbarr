@@ -58,6 +58,15 @@ func Test_int_uniq(t *testing.T) {
 	}
 }
 
+func Test_int_sum(t *testing.T) {
+	var arr intArray = intArray{1, 2, 3, 4, 5}
+	expect := 15
+	sum := arr.sum()
+	if sum != expect {
+		t.Errorf("result=%v", sum)
+	}
+}
+
 
 // str
 func Test_str_pop(t *testing.T) {
