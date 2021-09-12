@@ -12,7 +12,7 @@ import {
   "github.com/ppmasa8/rbarr"
 }
 
-array := [5]int{1, 2, 3, 4, 5}
+array := [5]intArray{1, 2, 3, 4, 5}
 
 array.pop()           // return 5, array = [1, 2, 3, 4]
 
@@ -24,7 +24,7 @@ array.unshift(0, 1)   // return nil, array = [0, 1, 1, 2, 3, 4, 5]
 
 array.sum()           // return 15
 
-array := [5]int{1, 1, 3, 4, 5}
+array := [5]intArray{1, 1, 3, 4, 5}
 
 array.uniq()          // return nil, array = [1, 3, 4, 5]
 ```
