@@ -58,6 +58,8 @@ func (p *intArray) uniq() {
 	*p = uniq
 }
 
+// instance method Enumerable#sum
+// sum() -> object
 func (p *intArray) sum() int {
 	temp := *p
 	var sum int
