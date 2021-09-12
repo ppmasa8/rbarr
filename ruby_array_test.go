@@ -76,6 +76,16 @@ func Test_int_max(t *testing.T) {
 	}
 }
 
+func Test_int_min(t *testing.T) {
+	var arr intArray = intArray{1, 2, 3, 4, 5}
+	expect := 1
+	min := arr.min()
+	if min != expect {
+		t.Errorf("result=%v, expect=%v", min, expect)
+	}
+}
+
+
 // str
 func Test_str_pop(t *testing.T) {
 	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}

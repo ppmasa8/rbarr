@@ -74,7 +74,7 @@ func (p *intArray) sum() int {
 // max -> object
 func (p *intArray) max() int {
 	temp := *p
-	var max int
+	max := temp[0]
 
 	for _, v := range temp {
 		if max < v {
@@ -82,6 +82,18 @@ func (p *intArray) max() int {
 		}
 	}
 	return max
+}
+
+func (p *intArray) min() int {
+	temp := *p
+	min := temp[0]
+
+	for _, v := range temp {
+		if min > v {
+			min = v
+		}
+	}
+	return min
 }
 
 
