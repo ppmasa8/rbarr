@@ -63,10 +63,18 @@ func Test_int_sum(t *testing.T) {
 	expect := 15
 	sum := arr.sum()
 	if sum != expect {
-		t.Errorf("result=%v", sum)
+		t.Errorf("result=%v, expect=%v", sum, expect)
 	}
 }
 
+func Test_int_max(t *testing.T) {
+	var arr intArray = intArray{1, 2, 3, 4, 5}
+	expect := 5
+	max := arr.max()
+	if max != expect {
+		t.Errorf("result=%v, expect=%v", max, expect)
+	}
+}
 
 // str
 func Test_str_pop(t *testing.T) {

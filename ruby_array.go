@@ -70,6 +70,20 @@ func (p *intArray) sum() int {
 	return sum
 }
 
+// instance method Array#max
+// max -> object
+func (p *intArray) max() int {
+	temp := *p
+	var max int
+
+	for _, v := range temp {
+		if max < v {
+			max = v
+		}
+	}
+	return max
+}
+
 
 /* string */
 // instance method Array#pop
