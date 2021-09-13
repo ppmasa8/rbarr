@@ -28,6 +28,10 @@ func (p *intArray) pop() int {
 // instance method Array#shift
 // shift -> object | nil
 func (p *intArray) shift() int {
+	if len(*p) == 0 {
+		osExit(1)
+		return -1
+	}
 	slice := *p
 	first := slice[0]
 	slice = slice[1:]
@@ -38,6 +42,7 @@ func (p *intArray) shift() int {
 // instance method Array#append
 // push(*obj) -> self
 func (p *intArray) push(val ...int) {
+	if len(*p) == 0 { osExit(1) }
 	slice := *p
 	for _, v := range val {
 		slice = append(slice, v)
@@ -48,12 +53,14 @@ func (p *intArray) push(val ...int) {
 // instance method Array#unshift
 // unshift(*obj) -> self
 func (p *intArray) unshift(val ...int) {
+	if len(*p) == 0 { osExit(1) }
 	slice := *p
 	slice = append(slice[:0], val...)
 	*p = slice
 }
 
 func (p *intArray) uniq() {
+	if len(*p) == 0 { osExit(1) }
 	temp := *p
 	m := make(map[int]bool)
 	var uniq []int
@@ -70,6 +77,10 @@ func (p *intArray) uniq() {
 // instance method Enumerable#sum
 // sum() -> object
 func (p *intArray) sum() int {
+	if len(*p) == 0 {
+		osExit(1)
+		return -1
+	}
 	temp := *p
 	var sum int
 
@@ -82,6 +93,10 @@ func (p *intArray) sum() int {
 // instance method Array#max
 // max -> object
 func (p *intArray) max() int {
+	if len(*p) == 0 {
+		osExit(1)
+		return -1
+	}
 	temp := *p
 	max := temp[0]
 
@@ -94,6 +109,10 @@ func (p *intArray) max() int {
 }
 
 func (p *intArray) min() int {
+	if len(*p) == 0 {
+		osExit(1)
+		return -1
+	}
 	temp := *p
 	min := temp[0]
 
@@ -110,6 +129,10 @@ func (p *intArray) min() int {
 // instance method Array#pop
 // pop -> object | nil
 func (p *strArray) pop() string {
+	if len(*p) == 0 {
+		osExit(1)
+		return "-1"
+	}
 	slice := *p
 	last  := slice[len(slice)-1]
 	slice = slice[:len(slice)-1]
@@ -120,6 +143,10 @@ func (p *strArray) pop() string {
 // instance method Array#shift
 // shift -> object | nil
 func (p *strArray) shift() string {
+	if len(*p) == 0 {
+		osExit(1)
+		return "-1"
+	}
 	slice := *p
 	first := slice[0]
 	slice = slice[1:]
@@ -130,6 +157,7 @@ func (p *strArray) shift() string {
 // instance method Array#append
 // push(*obj) -> self
 func (p *strArray) push(val ...string) {
+	if len(*p) == 0 { osExit(1) }
 	slice := *p
 	for _, v := range val {
 		slice = append(slice, v)
@@ -140,12 +168,14 @@ func (p *strArray) push(val ...string) {
 // instance method Array#unshift
 // unshift(*obj) -> self
 func (p *strArray) unshift(val ...string) {
+	if len(*p) == 0 { osExit(1) }
 	slice := *p
 	slice = append(slice[:0], val...)
 	*p = slice
 }
 
 func (p *strArray) uniq() {
+	if len(*p) == 0 { osExit(1) }
 	temp := *p
 	m := make(map[string]bool)
 	var uniq []string
