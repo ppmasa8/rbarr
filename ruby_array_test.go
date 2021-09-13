@@ -1,26 +1,42 @@
 package rbarr
 
-import "testing"
+import (
+	"testing"
+)
 
-// int
+/* int */
 func Test_int_pop(t *testing.T) {
-	// normal system
+	// Normal System
 	var arr intArray = intArray{1, 2, 3, 4, 5}
 	expect := intArray{1, 2, 3, 4}
-	arr.pop()
+	return_int := arr.pop()
+	if return_int != 5 {
+		t.Errorf("Return integer is wrong. result=%v, expect=%v", return_int, 5)
+	}
 	for i, _ := range arr {
 		if arr[i] != expect[i] {
-			t.Errorf("result=%v, index=%v", arr, i)
+			t.Errorf("Return array is wrong. result=%v, index=%v", arr, i)
 		}
 	}
-	// abnormal system
+
+	// Abnormal System
 	var arr_blank intArray = intArray{}
-	expect_blank := intArray{}
-	arr.pop()
-	for i, _ := range arr_blank {
-		if arr_blank[i] != expect_blank[i] {
-			t.Errorf("result=%v, index=%v", arr, i)
-		}
+	// Back up the function pointer to os.Exit()
+	oldExit := osExit
+
+	// Return the function pointer that was backed up to osExit after the test.
+	defer func() { osExit = oldExit }()
+
+	// When osExit() is executed, the exit code is recorded in the variable called.
+	var status int
+	exit := func(code int) {
+		status = code
+	}
+	osExit = exit
+	// Execute the method under test and check the results.
+	arr_blank.pop()
+	if exp := 1; status != exp {
+		t.Errorf("Expected exit code: %d, status: %d", exp, status)
 	}
 }
 

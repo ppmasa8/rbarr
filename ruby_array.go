@@ -1,14 +1,23 @@
 package rbarr
 
+import (
+	"os"
+)
+
 type intArray []int
 
 type strArray []string
 
+var osExit = os.Exit
 
 /* int */
 // instance method Array#pop
 // pop -> object | nil
 func (p *intArray) pop() int {
+	if len(*p) == 0 {
+		osExit(1)
+		return -1
+	}
 	slice := *p
 	last  := slice[len(slice)-1]
 	slice = slice[:len(slice)-1]
