@@ -59,6 +59,8 @@ func (p *intArray) unshift(val ...int) {
 	*p = slice
 }
 
+// instance method Array#uniq
+// uniq -> Array
 func (p *intArray) uniq() {
 	if len(*p) == 0 { osExit(1) }
 	temp := *p
@@ -108,6 +110,8 @@ func (p *intArray) max() int {
 	return max
 }
 
+// instance method Array#min
+// min -> object | nil
 func (p *intArray) min() int {
 	if len(*p) == 0 {
 		osExit(1)
@@ -174,6 +178,8 @@ func (p *strArray) unshift(val ...string) {
 	*p = slice
 }
 
+// instance method Array#uniq
+// uniq -> Array
 func (p *strArray) uniq() {
 	if len(*p) == 0 { osExit(1) }
 	temp := *p
