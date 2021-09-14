@@ -258,6 +258,24 @@ func Test_int_min(t *testing.T) {
 	}
 }
 
+func Test_int_size(t *testing.T) {
+	// Normal System
+	var arr intArray = intArray{1, 2, 3, 4, 5}
+	expect := 5
+	size := arr.size()
+	if size != expect {
+		t.Errorf("result=%v, expect=%v", size, expect)
+	}
+
+	// Abnormal System
+	var arr_blank intArray = intArray{}
+	expect_zero := 0
+	blank_size := arr_blank.size()
+	if blank_size != expect_zero {
+		t.Errorf("result=%v, expect=%v", size, expect)
+	}
+}
+
 
 /* string */
 func Test_str_pop(t *testing.T) {

@@ -128,6 +128,17 @@ func (p *intArray) min() int {
 	return min
 }
 
+// instance method Array#size
+// size -> Integer
+func (p *intArray) size() int {
+	if len(*p) == 0 { return 0 }
+
+	temp := *p
+	var cnt int
+	for range temp { cnt++ }
+	return cnt
+}
+
 
 /* string */
 // instance method Array#pop
