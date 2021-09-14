@@ -437,3 +437,21 @@ func Test_str_uniq(t *testing.T) {
 		t.Errorf("Expected exit code: %d, status: %d", exp, status)
 	}
 }
+
+func Test_str_size(t *testing.T) {
+	// Normal System
+	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "sunday"}
+	expect := 5
+	size := arr.size()
+	if size != expect {
+		t.Errorf("result=%v, expect=%v", size, expect)
+	}
+
+	// Abnormal System
+	var arr_blank strArray = strArray{}
+	expect_zero := 0
+	blank_size := arr_blank.size()
+	if blank_size != expect_zero {
+		t.Errorf("result=%v, expect=%v", size, expect)
+	}
+}

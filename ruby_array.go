@@ -205,3 +205,14 @@ func (p *strArray) uniq() {
 	}
 	*p = uniq
 }
+
+// instance method Array#size
+// size -> Integer
+func (p *strArray) size() int {
+	if len(*p) == 0 { return 0 }
+
+	temp := *p
+	var cnt int
+	for range temp { cnt++ }
+	return cnt
+}
