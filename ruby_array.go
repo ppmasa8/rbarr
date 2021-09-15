@@ -62,13 +62,14 @@ func (p *intArray) unshift(val ...int) {
 
 func (p *intArray) delete(val int) {
 	if len(*p) == 0 { osExit(1) }
-	temp := *p
-	for i, _ := range temp {
-		if temp[i] == val {
-			temp = append(temp[:i], temp[i+1:]...)
+	temp := *p; res := intArray{}
+	for _, v := range temp {
+		if v == val {
+			continue
 		}
+		res = append(res, v)
 	}
-	*p = temp
+	*p = res
 }
 
 // instance method Array#uniq
