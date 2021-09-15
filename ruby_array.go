@@ -60,6 +60,8 @@ func (p *intArray) unshift(val ...int) {
 	*p = slice
 }
 
+// instance method Array#delete
+// delete(val) { ... } -> object
 func (p *intArray) delete(val int) {
 	if len(*p) == 0 { osExit(1) }
 	temp := *p; res := intArray{}
@@ -202,6 +204,8 @@ func (p *strArray) unshift(val ...string) {
 	*p = slice
 }
 
+// instance method Array#delete
+// delete(val) { ... } -> object
 func (p *strArray) delete(val string) {
 	if len(*p) == 0 { osExit(1) }
 	temp := *p; res := strArray{}
