@@ -1,6 +1,7 @@
 package rbarr
 
 import (
+	"fmt"
 	"os"
 )
 
@@ -198,6 +199,29 @@ func (p *strArray) unshift(val ...string) {
 	slice := *p
 	slice = append(slice[:0], val...)
 	*p = slice
+}
+
+func (p *strArray) delete(val string) {
+	if len(*p) == 0 { osExit(1) }
+	temp := *p; res := strArray{}
+	for _, v := range temp {
+		if v == val {
+			continue
+		}
+		res = append(res, v)
+	}
+	*p = res
+}
+
+func recursive_delete(temp strArray, val string) strArray {
+	for i, _ := range temp {
+		if temp[i] == val {
+			temp = append(temp[:i], temp[i+1:]...)
+			fmt.Println(i)
+			recursive_delete(temp, val)
+		}
+	}
+	return temp
 }
 
 // instance method Array#uniq
