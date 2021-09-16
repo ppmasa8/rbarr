@@ -213,3 +213,28 @@ func Test_str_size(t *testing.T) {
 	}
 }
 
+func Test_str_include(t *testing.T) {
+	// Normal System
+	var arr1 strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "sunday"}
+	expect1 := true
+	include1 := arr1.include("sunday")
+	if include1 != expect1 {
+		t.Errorf("result=%v, expect=%v", include1, expect1)
+	}
+
+	var arr2 strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "sunday"}
+	expect2 := false
+	include2 := arr2.include("saturday")
+	if include2 != expect2 {
+		t.Errorf("result=%v, expect=%v", include2, expect2)
+	}
+
+	// Abnormal System
+	var arr_blank strArray = strArray{}
+	expect_blank := false
+	blank_include := arr_blank.include("saturday")
+	if blank_include != expect_blank {
+		t.Errorf("result=%v, expect=%v", blank_include, expect_blank)
+	}
+
+}

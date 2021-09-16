@@ -96,3 +96,17 @@ func (p *strArray) size() int {
 	for range temp { cnt++ }
 	return cnt
 }
+
+// instance method Array#include
+// include(val) -> bool
+func (p *strArray) include(val string) bool {
+	if len(*p) == 0 { return false }
+
+	temp := *p
+	for _, v := range temp {
+		if v == val {
+			return true
+		}
+	}
+	return false
+}
