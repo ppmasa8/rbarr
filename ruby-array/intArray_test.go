@@ -305,3 +305,29 @@ func Test_int_size(t *testing.T) {
 		t.Errorf("result=%v, expect=%v", size, expect)
 	}
 }
+
+func Test_int_include(t *testing.T) {
+	// Normal System
+	var arr1 intArray = intArray{1, 2, 3, 4, 5}
+	expect1 := true
+	include1 := arr1.include(1)
+	if include1 != expect1 {
+		t.Errorf("result=%v, expect=%v", include1, expect1)
+	}
+
+	var arr2 intArray = intArray{1, 2, 3, 4, 5}
+	expect2 := false
+	include2 := arr2.include(28)
+	if include2 != expect2 {
+		t.Errorf("result=%v, expect=%v", include2, expect2)
+	}
+
+	// Abnormal System
+	var arr_blank intArray = intArray{}
+	expect_blank := false
+	blank_include := arr_blank.include(3)
+	if blank_include != expect_blank {
+		t.Errorf("result=%v, expect=%v", blank_include, expect_blank)
+	}
+
+}

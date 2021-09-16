@@ -149,3 +149,14 @@ func (p *intArray) size() int {
 	return cnt
 }
 
+func (p *intArray) include(val int) bool {
+	if len(*p) == 0 { return false }
+
+	temp := *p
+	for _, v := range temp {
+		if v == val {
+			return true
+		}
+	}
+	return false
+}
