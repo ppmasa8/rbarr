@@ -22,17 +22,17 @@ func Test_int_pop(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -54,17 +54,17 @@ func Test_int_shift(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -86,17 +86,17 @@ func Test_int_push(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -118,17 +118,17 @@ func Test_int_unshift(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -150,17 +150,17 @@ func Test_int_delete(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -182,17 +182,17 @@ func Test_int_uniq(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -212,17 +212,17 @@ func Test_int_sum(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -242,17 +242,17 @@ func Test_int_max(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -272,17 +272,17 @@ func Test_int_min(t *testing.T) {
 	// Abnormal System
 	var arr_blank intArray = intArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForInt
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForInt = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForInt = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -324,17 +324,17 @@ func Test_str_pop(t *testing.T) {
 	// Abnormal System
 	var arr_blank strArray = strArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForStr
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForStr = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForStr = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -356,17 +356,17 @@ func Test_str_shift(t *testing.T) {
 	// Abnormal System
 	var arr_blank strArray = strArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForStr
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForStr = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForStr = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -388,17 +388,17 @@ func Test_str_push(t *testing.T) {
 	// Abnormal System
 	var arr_blank strArray = strArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForStr
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForStr = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForStr = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -420,17 +420,17 @@ func Test_str_unshift(t *testing.T) {
 	// Abnormal System
 	var arr_blank strArray = strArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForStr
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForStr = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForStr = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -452,17 +452,17 @@ func Test_str_delete(t *testing.T) {
 	// Abnormal System
 	var arr_blank strArray = strArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForStr
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForStr = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForStr = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
@@ -484,17 +484,17 @@ func Test_str_uniq(t *testing.T) {
 	// Abnormal System
 	var arr_blank strArray = strArray{}
 	// Back up the function pointer to os.Exit()
-	oldExit := osExit
+	oldExit := osExitForStr
 
 	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExit = oldExit }()
+	defer func() { osExitForStr = oldExit }()
 
 	// When osExit() is executed, the exit code is recorded in the variable called.
 	var status int
 	exit := func(code int) {
 		status = code
 	}
-	osExit = exit
+	osExitForStr = exit
 	// Execute the method under test and check the results.
 	arr_blank.pop()
 	if exp := 1; status != exp {
