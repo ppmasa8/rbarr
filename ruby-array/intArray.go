@@ -149,6 +149,8 @@ func (p *intArray) size() int {
 	return cnt
 }
 
+// instance method Array#include
+// include(val) -> bool
 func (p *intArray) include(val int) bool {
 	if len(*p) == 0 { return false }
 
