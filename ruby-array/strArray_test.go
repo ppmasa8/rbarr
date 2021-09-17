@@ -236,5 +236,22 @@ func Test_str_include(t *testing.T) {
 	if blank_include != expect_blank {
 		t.Errorf("result=%v, expect=%v", blank_include, expect_blank)
 	}
+}
 
+func Test_str_first(t *testing.T) {
+	// Normal System
+	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "sunday"}
+	expect := "sunday"
+	first := arr.first()
+	if first != expect {
+		t.Errorf("result=%v, expect=%v", first, expect)
+	}
+
+	// Abnormal System
+	var arr_blank strArray = strArray{}
+	expect_blank := "nil"
+	blank_first := arr_blank.first()
+	if blank_first != expect_blank {
+		t.Errorf("result=%v, expect=%v", blank_first, expect_blank)
+	}
 }

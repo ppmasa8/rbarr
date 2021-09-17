@@ -110,3 +110,11 @@ func (p *strArray) include(val string) bool {
 	}
 	return false
 }
+
+// instance method Array#first
+// first -> object | "nil"
+func (p *strArray) first() string {
+	if len(*p) == 0 { return "nil" }
+	temp := *p
+	return temp[0]
+}
