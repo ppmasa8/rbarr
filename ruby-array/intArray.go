@@ -163,6 +163,8 @@ func (p *intArray) include(val int) bool {
 	return false
 }
 
+// instance method Array#first
+// first -> object | -1
 func (p *intArray) first() int {
 	if len(*p) == 0 { return -1 }
 	temp := *p
