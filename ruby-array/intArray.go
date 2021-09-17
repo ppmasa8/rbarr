@@ -162,3 +162,9 @@ func (p *intArray) include(val int) bool {
 	}
 	return false
 }
+
+func (p *intArray) first() int {
+	if len(*p) == 0 { return -1 }
+	temp := *p
+	return temp[0]
+}

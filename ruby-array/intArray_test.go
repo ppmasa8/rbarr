@@ -329,5 +329,22 @@ func Test_int_include(t *testing.T) {
 	if blank_include != expect_blank {
 		t.Errorf("result=%v, expect=%v", blank_include, expect_blank)
 	}
+}
 
+func Test_int_first(t *testing.T) {
+	// Normal System
+	var arr intArray = intArray{1, 2, 3, 4, 5}
+	expect := 1
+	first := arr.first()
+	if first != expect {
+		t.Errorf("result=%v, expect=%v", first, expect)
+	}
+
+	// Abnormal System
+	var arr_blank intArray = intArray{}
+	expect_blank := -1
+	blank_first := arr_blank.first()
+	if blank_first != expect_blank {
+		t.Errorf("result=%v, expect=%v", blank_first, expect_blank)
+	}
 }
