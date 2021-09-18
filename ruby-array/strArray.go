@@ -118,3 +118,11 @@ func (p *strArray) first() string {
 	temp := *p
 	return temp[0]
 }
+
+// instance method Array#last
+// last -> object | "nil"
+func (p *strArray) last() string {
+	if len(*p) == 0 { return "nil" }
+	temp := *p
+	return temp[len(temp) - 1]
+}

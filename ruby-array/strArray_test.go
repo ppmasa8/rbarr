@@ -255,3 +255,21 @@ func Test_str_first(t *testing.T) {
 		t.Errorf("result=%v, expect=%v", blank_first, expect_blank)
 	}
 }
+
+func Test_str_last(t *testing.T) {
+	// Normal System
+	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "sunday"}
+	expect := "sunday"
+	last := arr.last()
+	if last != expect {
+		t.Errorf("result=%v, expect=%v", last, expect)
+	}
+
+	// Abnormal System
+	var arr_blank strArray = strArray{}
+	expect_blank := "nil"
+	blank_last := arr_blank.last()
+	if blank_last != expect_blank {
+		t.Errorf("result=%v, expect=%v", blank_last, expect_blank)
+	}
+}
