@@ -1,6 +1,8 @@
 package rbarr
 
-import "testing"
+import (
+	"testing"
+)
 
 /* int */
 func Test_int_pop(t *testing.T) {
@@ -364,5 +366,18 @@ func Test_int_last(t *testing.T) {
 	blank_last := arr_blank.last()
 	if blank_last != expect_blank {
 		t.Errorf("result=%v, expect=%v", blank_last, expect_blank)
+	}
+}
+
+func Test_int_combination(t *testing.T) {
+	var arr intArray = intArray{1, 2, 3, 4, 5}
+	expect := [][]int{{1, 2}, {1, 3}, {2, 3}, {1, 4}, {2, 4}, {3, 4}, {1, 5}, {2, 5}, {3, 5}, {4, 5}}
+	combination := arr.combination(2)
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 2; j++ {
+			if combination[i][j] != expect[i][j] {
+				t.Errorf("result=%v, expect=%v", combination[i][j], expect[i][j])
+			}
+		}
 	}
 }

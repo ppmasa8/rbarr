@@ -1,6 +1,8 @@
 package rbarr
 
-import "os"
+import (
+	"os"
+)
 
 type intArray []int
 
@@ -178,3 +180,35 @@ func (p *intArray) last() int {
 	temp := *p
 	return temp[len(temp) - 1]
 }
+
+func (p *intArray) combination(n int) [][]int {
+	// TODO Add process when comb is longer than intArray.
+	// TODO Add process when comb or intArray is zero.
+	temp := *p
+	cnt := 0
+	result := [][]int{}
+
+	// Full bit search
+	m := len(temp)
+	// Here, one bit represents the pattern for each of the m elements.
+	for bits := 0; bits < (1 << uint64(m)); bits++ {
+		// Loop for each element of bits
+		for i := 0; i < m; i++ {
+			// Check whether the state of the i-th element of the bit is on or not.
+			if (bits >> uint64(i)) & 1 == 1 { cnt++ }
+		}
+		// If the number of items that are on is n, then output.
+		if cnt == n {
+			unit := intArray{}
+			for i := 0; i < m; i++ {
+				if (bits >> uint64(i)) & 1 == 1 { unit = append(unit, temp[i]) }
+			}
+			result = append(result, unit)
+			unit = intArray{}
+		}
+		cnt = 0
+	}
+	return result
+}
+
+
