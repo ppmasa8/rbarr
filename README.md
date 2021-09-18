@@ -1,5 +1,5 @@
 # rbarr &#x1f48e;
-It can handle arrays like ruby.&#x1f60e;
+You can do ruby-like array operations in the golang.&#x1f60e;
 
 https://docs.ruby-lang.org/ja/latest/class/Array.html
 
