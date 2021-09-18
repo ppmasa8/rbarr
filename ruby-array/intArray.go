@@ -170,3 +170,11 @@ func (p *intArray) first() int {
 	temp := *p
 	return temp[0]
 }
+
+// instance method Array#last
+// last -> object | -1
+func (p *intArray) last() int {
+	if len(*p) == 0 { return -1 }
+	temp := *p
+	return temp[len(temp) - 1]
+}
