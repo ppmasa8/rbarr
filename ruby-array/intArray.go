@@ -184,8 +184,6 @@ func (p *intArray) last() int {
 // instance method Array#combination
 // combination(n) -> Enumerator
 func (p *intArray) combination(n int) [][]int {
-	// TODO Add process when comb is longer than intArray.
-	// TODO Add process when comb or intArray is zero.
 	temp := *p
 	cnt := 0
 	result := [][]int{}

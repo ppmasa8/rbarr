@@ -370,6 +370,7 @@ func Test_int_last(t *testing.T) {
 }
 
 func Test_int_combination(t *testing.T) {
+	// Normal Systems
 	var arr intArray = intArray{1, 2, 3, 4, 5}
 	expect := [][]int{{1, 2}, {1, 3}, {2, 3}, {1, 4}, {2, 4}, {3, 4}, {1, 5}, {2, 5}, {3, 5}, {4, 5}}
 	combination := arr.combination(2)
@@ -379,5 +380,13 @@ func Test_int_combination(t *testing.T) {
 				t.Errorf("result=%v, expect=%v", combination[i][j], expect[i][j])
 			}
 		}
+	}
+
+	// Abnormal Systems
+	var over_arr intArray = intArray{1, 2, 3, 4, 5}
+	var over_expect intArray = intArray{}
+	over_combination := over_arr.combination(6)
+	if len(over_combination) != len(over_expect) {
+		t.Errorf("result=%v, expect=%v", over_combination, over_expect)
 	}
 }
