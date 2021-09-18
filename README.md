@@ -36,6 +36,7 @@ $ go get github.com/ppmasa8/rbarr
 - include
 - first
 - last
+- combination
 
 ## Usage
 ```go
