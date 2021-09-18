@@ -273,3 +273,28 @@ func Test_str_last(t *testing.T) {
 		t.Errorf("result=%v, expect=%v", blank_last, expect_blank)
 	}
 }
+
+func Test_str_combination(t *testing.T) {
+	// Normal Systems
+	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}
+	expect := [][]string{{"sunday", "monday"}, {"sunday", "tuesday"}, {"monday", "tuesday"},
+		{"sunday", "wednesday"}, {"monday", "wednesday"}, {"tuesday", "wednesday"}, {"sunday", "thursday"},
+		{"monday", "thursday"}, {"tuesday", "thursday"}, {"wednesday", "thursday"}}
+	combination := arr.combination(2)
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 2; j++ {
+			if combination[i][j] != expect[i][j] {
+				t.Errorf("result=%v, expect=%v", combination[i][j], expect[i][j])
+			}
+		}
+	}
+
+	// Abnormal Systems
+	var over_arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}
+	var over_expect strArray = strArray{}
+	over_combination := over_arr.combination(6)
+	if len(over_combination) != len(over_expect) {
+		t.Errorf("result=%v, expect=%v", over_combination, over_expect)
+	}
+}
+
