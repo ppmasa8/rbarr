@@ -1,5 +1,5 @@
-# rbarr
-It can handle arrays like ruby.
+# rbarr &#x1f48e;
+It can handle arrays like ruby.&#x1f60e;
 
 https://docs.ruby-lang.org/ja/latest/class/Array.html
 
