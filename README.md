@@ -23,7 +23,7 @@ $ go get github.com/ppmasa8/rbarr
 - include
 - first
 - last
-- combination(alfa)
+- combination
 
 ### for []string
 - pop
