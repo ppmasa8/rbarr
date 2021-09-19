@@ -211,6 +211,8 @@ func (p *intArray) combination(n int) [][]int {
 	return result
 }
 
+// instance method Array#reverse
+// reverse -> Array
 func (p *intArray) reverse() intArray {
 	temp := *p
 	res := intArray{}
