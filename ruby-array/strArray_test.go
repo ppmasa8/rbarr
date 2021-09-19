@@ -308,3 +308,16 @@ func Test_str_reverse(t *testing.T) {
 		}
 	}
 }
+
+func Test_str_empty(t *testing.T) {
+	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}
+	if arr.empty() != false {
+		t.Errorf("result=%v, expect=%v", arr.empty(), false)
+	}
+
+	var blank_arr strArray = strArray{}
+	if blank_arr.empty() != true {
+		t.Errorf("result=%v, expect=%v", blank_arr.empty(), true)
+	}
+}
+

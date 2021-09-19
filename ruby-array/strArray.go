@@ -167,3 +167,7 @@ func (p *strArray) reverse() strArray {
 	}
 	return res
 }
+
+func (p *strArray) empty() bool {
+	return len(*p) == 0
+}
