@@ -390,3 +390,14 @@ func Test_int_combination(t *testing.T) {
 		t.Errorf("result=%v, expect=%v", over_combination, over_expect)
 	}
 }
+
+func Test_int_reverse(t *testing.T) {
+	var arr intArray = intArray{1, 2, 3, 4, 5}
+	expect := intArray{5, 4, 3, 2, 1}
+	rev := arr.reverse()
+	for i, v := range rev {
+		if v != expect[i] {
+			t.Errorf("result=%v, expect=%v", v, expect[i])
+		}
+	}
+}

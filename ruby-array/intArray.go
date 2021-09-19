@@ -211,4 +211,11 @@ func (p *intArray) combination(n int) [][]int {
 	return result
 }
 
-
+func (p *intArray) reverse() intArray {
+	temp := *p
+	res := intArray{}
+	for i := len(temp) - 1; i >= 0; i-- {
+		res = append(res, temp[i])
+	}
+	return res
+}
