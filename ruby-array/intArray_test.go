@@ -401,3 +401,15 @@ func Test_int_reverse(t *testing.T) {
 		}
 	}
 }
+
+func Test_int_empty(t *testing.T) {
+	var arr intArray = intArray{1, 2, 3, 4, 5}
+	if arr.empty() != false {
+		t.Errorf("result=%v, expect=%v", arr.empty(), false)
+	}
+
+	var blank_arr intArray = intArray{}
+	if blank_arr.empty() != true {
+		t.Errorf("result=%v, expect=%v", blank_arr.empty(), true)
+	}
+}

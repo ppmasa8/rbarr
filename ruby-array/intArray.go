@@ -221,3 +221,7 @@ func (p *intArray) reverse() intArray {
 	}
 	return res
 }
+
+func (p *intArray) empty() bool {
+	return len(*p) == 0
+}
