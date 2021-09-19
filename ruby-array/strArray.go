@@ -156,3 +156,14 @@ func (p *strArray) combination(n int) [][]string {
 	}
 	return result
 }
+
+// instance method Array#reverse
+// reverse -> Array
+func (p *strArray) reverse() strArray {
+	temp := *p
+	res := strArray{}
+	for i := len(temp) - 1; i >= 0; i-- {
+		res = append(res, temp[i])
+	}
+	return res
+}

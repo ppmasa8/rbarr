@@ -298,3 +298,13 @@ func Test_str_combination(t *testing.T) {
 	}
 }
 
+func Test_str_reverse(t *testing.T) {
+	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}
+	expect := strArray{"thursday", "wednesday", "tuesday", "monday", "sunday"}
+	rev := arr.reverse()
+	for i, v := range rev {
+		if v != expect[i] {
+			t.Errorf("result=%v, expect=%v", v, expect[i])
+		}
+	}
+}
