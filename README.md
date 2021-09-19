@@ -24,6 +24,7 @@ $ go get github.com/ppmasa8/rbarr
 - first
 - last
 - combination
+- reverse
 
 ### for []string
 - pop
@@ -37,6 +38,7 @@ $ go get github.com/ppmasa8/rbarr
 - first
 - last
 - combination
+- reverse
 
 ## Usage
 ```go
@@ -71,6 +73,8 @@ array.first()         // return 1
 array.last()          // return 5
 
 array.combination(2)  // return [[1 2] [1 3] [2 3] [1 4] [2 4] [3 4] [1 5] [2 5] [3 5] [4 5]]
+
+array.reverse()       // return [5, 4, 3, 2, 1]
 
 array := [5]intArray{1, 1, 3, 4, 5}
 
