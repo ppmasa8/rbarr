@@ -1,4 +1,6 @@
 # rbarr &#x1f48e;
+[![Go](https://github.com/ppmasa8/rbarr/actions/workflows/go.yml/badge.svg?branch=master)](https://github.com/ppmasa8/rbarr/actions/workflows/go.yml)
+
 You can do ruby-like array operations in the golang.&#x1f60e;
 
 https://docs.ruby-lang.org/ja/latest/class/Array.html
