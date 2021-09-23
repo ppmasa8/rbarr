@@ -174,7 +174,8 @@ func (p *strArray) empty() bool {
 	return len(*p) == 0
 }
 
-
+// instance method Array#sort
+// sort -> Array
 func strMerge(a strArray, b strArray) strArray {
 	var r = make(strArray, len(a)+len(b))
 	var i = 0

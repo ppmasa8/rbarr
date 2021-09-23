@@ -228,9 +228,8 @@ func (p *intArray) empty() bool {
 	return len(*p) == 0
 }
 
-//
-// sort
-//
+// instance method Array#sort
+// sort -> Array
 func intMerge(a intArray, b intArray) intArray {
 	var r = make(intArray, len(a)+len(b))
 	var i = 0
