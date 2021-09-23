@@ -28,6 +28,7 @@ $ go get github.com/ppmasa8/rbarr
 - combination
 - reverse
 - empty
+- sort
 
 ### for []string
 - pop
@@ -43,6 +44,7 @@ $ go get github.com/ppmasa8/rbarr
 - combination
 - reverse
 - empty
+- sort
 
 ## Usage
 ```go
@@ -80,9 +82,19 @@ array.combination(2)  // return [[1 2] [1 3] [2 3] [1 4] [2 4] [3 4] [1 5] [2 5]
 
 array.reverse()       // return [5, 4, 3, 2, 1]
 
+array.empty()         // return false
+
+---------------------------------------------------------------------------------
+
 array := [5]intArray{1, 1, 3, 4, 5}
 
 array.uniq()          // return nil, array = [1, 3, 4, 5]
+
+---------------------------------------------------------------------------------
+
+array := intArray{5, 9, 4, 6, 1, 10, 3, 2, 7, 8}
+
+array.sort()          // return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], The same goes for arrays.
 ```
 
 ## License
