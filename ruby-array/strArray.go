@@ -168,6 +168,8 @@ func (p *strArray) reverse() strArray {
 	return res
 }
 
+// instance method Array#empty
+// empty -> bool
 func (p *strArray) empty() bool {
 	return len(*p) == 0
 }

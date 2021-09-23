@@ -222,6 +222,8 @@ func (p *intArray) reverse() intArray {
 	return res
 }
 
+// instance method Array#empty
+// empty -> bool
 func (p *intArray) empty() bool {
 	return len(*p) == 0
 }
