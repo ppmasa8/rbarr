@@ -27,6 +27,7 @@ $ go get github.com/ppmasa8/rbarr
 - last
 - combination
 - reverse
+- empty
 
 ### for []string
 - pop
@@ -41,6 +42,7 @@ $ go get github.com/ppmasa8/rbarr
 - last
 - combination
 - reverse
+- empty
 
 ## Usage
 ```go
