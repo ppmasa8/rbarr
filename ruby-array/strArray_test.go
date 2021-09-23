@@ -321,3 +321,13 @@ func Test_str_empty(t *testing.T) {
 	}
 }
 
+func Test_str_sort(t *testing.T) {
+	var arr strArray = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}
+	expect := strArray{"monday", "sunday", "thursday", "tuesday", "wednesday"}
+	arr.sort()
+	for i, _ := range arr {
+		if arr[i] != expect[i] {
+			t.Errorf("result=%v, expect=%v", arr[i], expect[i])
+		}
+	}
+}

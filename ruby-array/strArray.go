@@ -173,3 +173,49 @@ func (p *strArray) reverse() strArray {
 func (p *strArray) empty() bool {
 	return len(*p) == 0
 }
+
+
+func strMerge(a strArray, b strArray) strArray {
+	var r = make(strArray, len(a)+len(b))
+	var i = 0
+	var j = 0
+
+	for i < len(a) && j < len(b) {
+		if a[i] <= b[j] {
+			r[i+j] = a[i]
+			i++
+		} else {
+			r[i+j] = b[j]
+			j++
+		}
+	}
+
+	for i < len(a) {
+		r[i+j] = a[i]
+		i++
+	}
+	for j < len(b) {
+		r[i+j] = b[j]
+		j++
+	}
+
+	return r
+}
+
+func strMergeSort(temp strArray) strArray {
+	if len(temp) < 2 {
+		return temp
+	}
+	var mid = len(temp) / 2
+	var a = strMergeSort(temp[:mid])
+	var b = strMergeSort(temp[mid:])
+	return strMerge(a, b)
+}
+
+func (p *strArray) sort() strArray {
+	temp := *p
+	temp = strMergeSort(temp)
+	*p = temp
+	return *p
+}
+
