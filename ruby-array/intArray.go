@@ -231,7 +231,7 @@ func (p *intArray) empty() bool {
 //
 // sort
 //
-func merge(a intArray, b intArray) intArray {
+func intMerge(a intArray, b intArray) intArray {
 	var r = make(intArray, len(a)+len(b))
 	var i = 0
 	var j = 0
@@ -258,19 +258,19 @@ func merge(a intArray, b intArray) intArray {
 	return r
 }
 
-func Mergesort(temp intArray) intArray {
+func intMergeSort(temp intArray) intArray {
 	if len(temp) < 2 {
 		return temp
 	}
 	var mid = len(temp) / 2
-	var a = Mergesort(temp[:mid])
-	var b = Mergesort(temp[mid:])
-	return merge(a, b)
+	var a = intMergeSort(temp[:mid])
+	var b = intMergeSort(temp[mid:])
+	return intMerge(a, b)
 }
 
 func (p *intArray) sort() intArray {
 	temp := *p
-	temp = Mergesort(temp)
+	temp = intMergeSort(temp)
 	*p = temp
 	return *p
 }
