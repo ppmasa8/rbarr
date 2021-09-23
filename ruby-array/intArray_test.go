@@ -413,3 +413,14 @@ func Test_int_empty(t *testing.T) {
 		t.Errorf("result=%v, expect=%v", blank_arr.empty(), true)
 	}
 }
+
+func Test_int_sort(t *testing.T) {
+	var arr intArray = intArray{5, 9, 4, 6, 1, 10, 3, 2, 7, 8}
+	expect := intArray{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	arr.sort()
+	for i, _ := range arr {
+		if arr[i] != expect[i] {
+			t.Errorf("result=%v, expect=%v", arr[i], expect[i])
+		}
+	}
+}

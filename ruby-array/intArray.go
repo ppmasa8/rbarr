@@ -225,3 +225,50 @@ func (p *intArray) reverse() intArray {
 func (p *intArray) empty() bool {
 	return len(*p) == 0
 }
+
+//
+// sort
+//
+func merge(a intArray, b intArray) intArray {
+	var r = make(intArray, len(a)+len(b))
+	var i = 0
+	var j = 0
+
+	for i < len(a) && j < len(b) {
+		if a[i] <= b[j] {
+			r[i+j] = a[i]
+			i++
+		} else {
+			r[i+j] = b[j]
+			j++
+		}
+	}
+
+	for i < len(a) {
+		r[i+j] = a[i]
+		i++
+	}
+	for j < len(b) {
+		r[i+j] = b[j]
+		j++
+	}
+
+	return r
+}
+
+func Mergesort(temp intArray) intArray {
+	if len(temp) < 2 {
+		return temp
+	}
+	var mid = len(temp) / 2
+	var a = Mergesort(temp[:mid])
+	var b = Mergesort(temp[mid:])
+	return merge(a, b)
+}
+
+func (p *intArray) sort() intArray {
+	temp := *p
+	temp = Mergesort(temp)
+	*p = temp
+	return *p
+}
