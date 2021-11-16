@@ -1,17 +1,17 @@
 package rbarr
 
-import "os"
+import (
+	"log"
+)
 
 type strArray []string
-
-var osExitForStr = os.Exit
 
 /* string */
 // instance method Array#pop
 // pop -> object | nil
 func (p *strArray) pop() string {
 	if len(*p) == 0 {
-		osExitForStr(1)
+		log.Println("strArray is null")
 		return "-1"
 	}
 	slice := *p
@@ -25,7 +25,7 @@ func (p *strArray) pop() string {
 // shift -> object | nil
 func (p *strArray) shift() string {
 	if len(*p) == 0 {
-		osExitForStr(1)
+		log.Println("strArray is null")
 		return "-1"
 	}
 	slice := *p
@@ -38,7 +38,7 @@ func (p *strArray) shift() string {
 // instance method Array#append
 // push(*obj) -> self
 func (p *strArray) push(val ...string) {
-	if len(*p) == 0 { osExitForStr(1) }
+	if len(*p) == 0 { log.Println("strArray is null") }
 	slice := *p
 	for _, v := range val {
 		slice = append(slice, v)
@@ -49,7 +49,7 @@ func (p *strArray) push(val ...string) {
 // instance method Array#unshift
 // unshift(*obj) -> self
 func (p *strArray) unshift(val ...string) {
-	if len(*p) == 0 { osExitForStr(1) }
+	if len(*p) == 0 { log.Println("strArray is null") }
 	slice := *p
 	slice = append(slice[:0], val...)
 	*p = slice
@@ -58,7 +58,7 @@ func (p *strArray) unshift(val ...string) {
 // instance method Array#delete
 // delete(val) { ... } -> object
 func (p *strArray) delete(val string) {
-	if len(*p) == 0 { osExitForStr(1) }
+	if len(*p) == 0 { log.Println("strArray is null") }
 	temp := *p; res := strArray{}
 	for _, v := range temp {
 		if v == val {
@@ -72,7 +72,7 @@ func (p *strArray) delete(val string) {
 // instance method Array#uniq
 // uniq -> Array
 func (p *strArray) uniq() {
-	if len(*p) == 0 { osExitForStr(1) }
+	if len(*p) == 0 { log.Println("strArray is null") }
 	temp := *p
 	m := make(map[string]bool)
 	var uniq []string
