@@ -94,7 +94,7 @@ array.uniq()          // return nil, array = [1, 3, 4, 5]
 
 array := intArray{5, 9, 4, 6, 1, 10, 3, 2, 7, 8}
 
-array.sort()          // return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], The same goes for arrays.
+array.sort()          // return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 ## License
