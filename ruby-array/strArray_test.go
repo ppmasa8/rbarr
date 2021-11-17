@@ -205,10 +205,10 @@ func Test_str_size(t *testing.T) {
 	}
 
 	// Abnormal System
-	var arr_blank = strArray{}
-	expect_zero := 0
-	blank_size := arr_blank.size()
-	if blank_size != expect_zero {
+	var arrBlank = strArray{}
+	expectZero := 0
+	blankSize := arrBlank.size()
+	if blankSize != expectZero {
 		t.Errorf("result=%v, expect=%v", size, expect)
 	}
 }
@@ -230,11 +230,11 @@ func Test_str_include(t *testing.T) {
 	}
 
 	// Abnormal System
-	var arr_blank = strArray{}
-	expect_blank := false
-	blank_include := arr_blank.include("saturday")
-	if blank_include != expect_blank {
-		t.Errorf("result=%v, expect=%v", blank_include, expect_blank)
+	var arrBlank = strArray{}
+	expectBlank := false
+	blankInclude := arrBlank.include("saturday")
+	if blankInclude != expectBlank {
+		t.Errorf("result=%v, expect=%v", blankInclude, expectBlank)
 	}
 }
 
@@ -248,11 +248,11 @@ func Test_str_first(t *testing.T) {
 	}
 
 	// Abnormal System
-	var arr_blank = strArray{}
-	expect_blank := "nil"
-	blank_first := arr_blank.first()
-	if blank_first != expect_blank {
-		t.Errorf("result=%v, expect=%v", blank_first, expect_blank)
+	var arrBlank = strArray{}
+	expectBlank := "nil"
+	blankFirst := arrBlank.first()
+	if blankFirst != expectBlank {
+		t.Errorf("result=%v, expect=%v", blankFirst, expectBlank)
 	}
 }
 
@@ -266,11 +266,11 @@ func Test_str_last(t *testing.T) {
 	}
 
 	// Abnormal System
-	var arr_blank = strArray{}
-	expect_blank := "nil"
-	blank_last := arr_blank.last()
-	if blank_last != expect_blank {
-		t.Errorf("result=%v, expect=%v", blank_last, expect_blank)
+	var arrBlank = strArray{}
+	expectBlank := "nil"
+	blankLast := arrBlank.last()
+	if blankLast != expectBlank {
+		t.Errorf("result=%v, expect=%v", blankLast, expectBlank)
 	}
 }
 
@@ -290,11 +290,11 @@ func Test_str_combination(t *testing.T) {
 	}
 
 	// Abnormal Systems
-	var over_arr = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}
-	var over_expect = strArray{}
-	over_combination := over_arr.combination(6)
-	if len(over_combination) != len(over_expect) {
-		t.Errorf("result=%v, expect=%v", over_combination, over_expect)
+	var overArr = strArray{"sunday", "monday", "tuesday", "wednesday", "thursday"}
+	var overExpect = strArray{}
+	overCombination := overArr.combination(6)
+	if len(overCombination) != len(overExpect) {
+		t.Errorf("result=%v, expect=%v", overCombination, overExpect)
 	}
 }
 
@@ -315,9 +315,9 @@ func Test_str_empty(t *testing.T) {
 		t.Errorf("result=%v, expect=%v", arr.empty(), false)
 	}
 
-	var blank_arr = strArray{}
-	if blank_arr.empty() != true {
-		t.Errorf("result=%v, expect=%v", blank_arr.empty(), true)
+	var blankArr = strArray{}
+	if blankArr.empty() != true {
+		t.Errorf("result=%v, expect=%v", blankArr.empty(), true)
 	}
 }
 

@@ -358,10 +358,10 @@ func Test_int_size(t *testing.T) {
 	}
 
 	// Abnormal System
-	var arr_blank = intArray{}
-	expect_zero := 0
-	blank_size := arr_blank.size()
-	if blank_size != expect_zero {
+	var arrBlank = intArray{}
+	expectZero := 0
+	blankSize := arrBlank.size()
+	if blankSize != expectZero {
 		t.Errorf("result=%v, expect=%v", size, expect)
 	}
 }
@@ -383,11 +383,11 @@ func Test_int_include(t *testing.T) {
 	}
 
 	// Abnormal System
-	var arr_blank = intArray{}
-	expect_blank := false
-	blank_include := arr_blank.include(3)
-	if blank_include != expect_blank {
-		t.Errorf("result=%v, expect=%v", blank_include, expect_blank)
+	var arrBlank = intArray{}
+	expectBlank := false
+	blankInclude := arrBlank.include(3)
+	if blankInclude != expectBlank {
+		t.Errorf("result=%v, expect=%v", blankInclude, expectBlank)
 	}
 }
 
@@ -401,11 +401,11 @@ func Test_int_first(t *testing.T) {
 	}
 
 	// Abnormal System
-	var arr_blank = intArray{}
-	expect_blank := -1
-	blank_first := arr_blank.first()
-	if blank_first != expect_blank {
-		t.Errorf("result=%v, expect=%v", blank_first, expect_blank)
+	var arrBlank = intArray{}
+	expectBlank := -1
+	blankFirst := arrBlank.first()
+	if blankFirst != expectBlank {
+		t.Errorf("result=%v, expect=%v", blankFirst, expectBlank)
 	}
 }
 
@@ -419,11 +419,11 @@ func Test_int_last(t *testing.T) {
 	}
 
 	// Abnormal System
-	var arr_blank = intArray{}
-	expect_blank := -1
-	blank_last := arr_blank.last()
-	if blank_last != expect_blank {
-		t.Errorf("result=%v, expect=%v", blank_last, expect_blank)
+	var arrBlank = intArray{}
+	expectBlank := -1
+	blankLast := arrBlank.last()
+	if blankLast != expectBlank {
+		t.Errorf("result=%v, expect=%v", blankLast, expectBlank)
 	}
 }
 
@@ -441,11 +441,11 @@ func Test_int_combination(t *testing.T) {
 	}
 
 	// Abnormal Systems
-	var over_arr = intArray{1, 2, 3, 4, 5}
-	var over_expect = intArray{}
-	over_combination := over_arr.combination(6)
-	if len(over_combination) != len(over_expect) {
-		t.Errorf("result=%v, expect=%v", over_combination, over_expect)
+	var overArr = intArray{1, 2, 3, 4, 5}
+	var overExpect = intArray{}
+	overCombination := overArr.combination(6)
+	if len(overCombination) != len(overExpect) {
+		t.Errorf("result=%v, expect=%v", overCombination, overExpect)
 	}
 }
 
@@ -466,9 +466,9 @@ func Test_int_empty(t *testing.T) {
 		t.Errorf("result=%v, expect=%v", arr.empty(), false)
 	}
 
-	var blank_arr = intArray{}
-	if blank_arr.empty() != true {
-		t.Errorf("result=%v, expect=%v", blank_arr.empty(), true)
+	var blankArr = intArray{}
+	if blankArr.empty() != true {
+		t.Errorf("result=%v, expect=%v", blankArr.empty(), true)
 	}
 }
 
