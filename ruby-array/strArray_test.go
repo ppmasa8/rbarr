@@ -14,25 +14,25 @@ func Test_str_pop(t *testing.T) {
 		}
 	}
 
-	// Abnormal System
-	var arr_blank strArray = strArray{}
-	// Back up the function pointer to os.Exit()
-	oldExit := osExitForStr
-
-	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExitForStr = oldExit }()
-
-	// When osExit() is executed, the exit code is recorded in the variable called.
-	var status int
-	exit := func(code int) {
-		status = code
-	}
-	osExitForStr = exit
-	// Execute the method under test and check the results.
-	arr_blank.pop()
-	if exp := 1; status != exp {
-		t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	}
+	//// Abnormal System
+	//var arr_blank strArray = strArray{}
+	//// Back up the function pointer to os.Exit()
+	//oldExit := osExitForStr
+	//
+	//// Return the function pointer that was backed up to osExit after the test.
+	//defer func() { osExitForStr = oldExit }()
+	//
+	//// When osExit() is executed, the exit code is recorded in the variable called.
+	//var status int
+	//exit := func(code int) {
+	//	status = code
+	//}
+	//osExitForStr = exit
+	//// Execute the method under test and check the results.
+	//arr_blank.pop()
+	//if exp := 1; status != exp {
+	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
+	//}
 }
 
 func Test_str_shift(t *testing.T) {
@@ -46,25 +46,25 @@ func Test_str_shift(t *testing.T) {
 		}
 	}
 
-	// Abnormal System
-	var arr_blank strArray = strArray{}
-	// Back up the function pointer to os.Exit()
-	oldExit := osExitForStr
-
-	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExitForStr = oldExit }()
-
-	// When osExit() is executed, the exit code is recorded in the variable called.
-	var status int
-	exit := func(code int) {
-		status = code
-	}
-	osExitForStr = exit
-	// Execute the method under test and check the results.
-	arr_blank.pop()
-	if exp := 1; status != exp {
-		t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	}
+	//// Abnormal System
+	//var arr_blank strArray = strArray{}
+	//// Back up the function pointer to os.Exit()
+	//oldExit := osExitForStr
+	//
+	//// Return the function pointer that was backed up to osExit after the test.
+	//defer func() { osExitForStr = oldExit }()
+	//
+	//// When osExit() is executed, the exit code is recorded in the variable called.
+	//var status int
+	//exit := func(code int) {
+	//	status = code
+	//}
+	//osExitForStr = exit
+	//// Execute the method under test and check the results.
+	//arr_blank.pop()
+	//if exp := 1; status != exp {
+	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
+	//}
 }
 
 func Test_str_push(t *testing.T) {
@@ -78,25 +78,25 @@ func Test_str_push(t *testing.T) {
 		}
 	}
 
-	// Abnormal System
-	var arr_blank strArray = strArray{}
-	// Back up the function pointer to os.Exit()
-	oldExit := osExitForStr
-
-	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExitForStr = oldExit }()
-
-	// When osExit() is executed, the exit code is recorded in the variable called.
-	var status int
-	exit := func(code int) {
-		status = code
-	}
-	osExitForStr = exit
-	// Execute the method under test and check the results.
-	arr_blank.pop()
-	if exp := 1; status != exp {
-		t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	}
+	//// Abnormal System
+	//var arr_blank strArray = strArray{}
+	//// Back up the function pointer to os.Exit()
+	//oldExit := osExitForStr
+	//
+	//// Return the function pointer that was backed up to osExit after the test.
+	//defer func() { osExitForStr = oldExit }()
+	//
+	//// When osExit() is executed, the exit code is recorded in the variable called.
+	//var status int
+	//exit := func(code int) {
+	//	status = code
+	//}
+	//osExitForStr = exit
+	//// Execute the method under test and check the results.
+	//arr_blank.pop()
+	//if exp := 1; status != exp {
+	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
+	//}
 }
 
 func Test_str_unshift(t *testing.T) {
@@ -110,25 +110,25 @@ func Test_str_unshift(t *testing.T) {
 		}
 	}
 
-	// Abnormal System
-	var arr_blank strArray = strArray{}
-	// Back up the function pointer to os.Exit()
-	oldExit := osExitForStr
-
-	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExitForStr = oldExit }()
-
-	// When osExit() is executed, the exit code is recorded in the variable called.
-	var status int
-	exit := func(code int) {
-		status = code
-	}
-	osExitForStr = exit
-	// Execute the method under test and check the results.
-	arr_blank.pop()
-	if exp := 1; status != exp {
-		t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	}
+	//// Abnormal System
+	//var arr_blank strArray = strArray{}
+	//// Back up the function pointer to os.Exit()
+	//oldExit := osExitForStr
+	//
+	//// Return the function pointer that was backed up to osExit after the test.
+	//defer func() { osExitForStr = oldExit }()
+	//
+	//// When osExit() is executed, the exit code is recorded in the variable called.
+	//var status int
+	//exit := func(code int) {
+	//	status = code
+	//}
+	//osExitForStr = exit
+	//// Execute the method under test and check the results.
+	//arr_blank.pop()
+	//if exp := 1; status != exp {
+	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
+	//}
 }
 
 func Test_str_delete(t *testing.T) {
@@ -142,25 +142,25 @@ func Test_str_delete(t *testing.T) {
 		}
 	}
 
-	// Abnormal System
-	var arr_blank strArray = strArray{}
-	// Back up the function pointer to os.Exit()
-	oldExit := osExitForStr
-
-	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExitForStr = oldExit }()
-
-	// When osExit() is executed, the exit code is recorded in the variable called.
-	var status int
-	exit := func(code int) {
-		status = code
-	}
-	osExitForStr = exit
-	// Execute the method under test and check the results.
-	arr_blank.pop()
-	if exp := 1; status != exp {
-		t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	}
+	//// Abnormal System
+	//var arr_blank strArray = strArray{}
+	//// Back up the function pointer to os.Exit()
+	//oldExit := osExitForStr
+	//
+	//// Return the function pointer that was backed up to osExit after the test.
+	//defer func() { osExitForStr = oldExit }()
+	//
+	//// When osExit() is executed, the exit code is recorded in the variable called.
+	//var status int
+	//exit := func(code int) {
+	//	status = code
+	//}
+	//osExitForStr = exit
+	//// Execute the method under test and check the results.
+	//arr_blank.pop()
+	//if exp := 1; status != exp {
+	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
+	//}
 }
 
 func Test_str_uniq(t *testing.T) {
@@ -174,25 +174,25 @@ func Test_str_uniq(t *testing.T) {
 		}
 	}
 
-	// Abnormal System
-	var arr_blank strArray = strArray{}
-	// Back up the function pointer to os.Exit()
-	oldExit := osExitForStr
-
-	// Return the function pointer that was backed up to osExit after the test.
-	defer func() { osExitForStr = oldExit }()
-
-	// When osExit() is executed, the exit code is recorded in the variable called.
-	var status int
-	exit := func(code int) {
-		status = code
-	}
-	osExitForStr = exit
-	// Execute the method under test and check the results.
-	arr_blank.pop()
-	if exp := 1; status != exp {
-		t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	}
+	//// Abnormal System
+	//var arr_blank strArray = strArray{}
+	//// Back up the function pointer to os.Exit()
+	//oldExit := osExitForStr
+	//
+	//// Return the function pointer that was backed up to osExit after the test.
+	//defer func() { osExitForStr = oldExit }()
+	//
+	//// When osExit() is executed, the exit code is recorded in the variable called.
+	//var status int
+	//exit := func(code int) {
+	//	status = code
+	//}
+	//osExitForStr = exit
+	//// Execute the method under test and check the results.
+	//arr_blank.pop()
+	//if exp := 1; status != exp {
+	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
+	//}
 }
 
 func Test_str_size(t *testing.T) {
