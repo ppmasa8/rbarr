@@ -1,6 +1,12 @@
 package rbarr
 
-import "testing"
+import (
+	"bytes"
+	"log"
+	"os"
+	"strings"
+	"testing"
+)
 
 /* string */
 func Test_str_pop(t *testing.T) {
@@ -14,25 +20,31 @@ func Test_str_pop(t *testing.T) {
 		}
 	}
 
-	//// Abnormal System
-	//var arr_blank strArray = strArray{}
-	//// Back up the function pointer to os.Exit()
-	//oldExit := osExitForStr
-	//
-	//// Return the function pointer that was backed up to osExit after the test.
-	//defer func() { osExitForStr = oldExit }()
-	//
-	//// When osExit() is executed, the exit code is recorded in the variable called.
-	//var status int
-	//exit := func(code int) {
-	//	status = code
-	//}
-	//osExitForStr = exit
-	//// Execute the method under test and check the results.
-	//arr_blank.pop()
-	//if exp := 1; status != exp {
-	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	//}
+	// Abnormal system
+	var blankArr = strArray{}
+
+	// Change log output destination to buffer.
+	var buf bytes.Buffer
+	log.SetOutput(&buf)
+
+	// Set the flag to 0 because the default is to output the date.
+	defaultFlags := log.Flags()
+	log.SetFlags(0)
+
+	// Return changed content when Test_printLog testing finished.
+	defer func() {
+		log.SetOutput(os.Stderr)
+		log.SetFlags(defaultFlags)
+	}()
+
+	blankArr.pop()
+
+	expected := "strArray is null"
+	actual := strings.TrimRight(buf.String(), "\n")
+
+	if actual != expected {
+		t.Fatalf("failed! actual = %s, expected = %s", actual, expected)
+	}
 }
 
 func Test_str_shift(t *testing.T) {
@@ -46,25 +58,31 @@ func Test_str_shift(t *testing.T) {
 		}
 	}
 
-	//// Abnormal System
-	//var arr_blank strArray = strArray{}
-	//// Back up the function pointer to os.Exit()
-	//oldExit := osExitForStr
-	//
-	//// Return the function pointer that was backed up to osExit after the test.
-	//defer func() { osExitForStr = oldExit }()
-	//
-	//// When osExit() is executed, the exit code is recorded in the variable called.
-	//var status int
-	//exit := func(code int) {
-	//	status = code
-	//}
-	//osExitForStr = exit
-	//// Execute the method under test and check the results.
-	//arr_blank.pop()
-	//if exp := 1; status != exp {
-	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	//}
+	// Abnormal system
+	var blankArr = strArray{}
+
+	// Change log output destination to buffer.
+	var buf bytes.Buffer
+	log.SetOutput(&buf)
+
+	// Set the flag to 0 because the default is to output the date.
+	defaultFlags := log.Flags()
+	log.SetFlags(0)
+
+	// Return changed content when Test_printLog testing finished.
+	defer func() {
+		log.SetOutput(os.Stderr)
+		log.SetFlags(defaultFlags)
+	}()
+
+	blankArr.shift()
+
+	expected := "strArray is null"
+	actual := strings.TrimRight(buf.String(), "\n")
+
+	if actual != expected {
+		t.Fatalf("failed! actual = %s, expected = %s", actual, expected)
+	}
 }
 
 func Test_str_push(t *testing.T) {
@@ -78,25 +96,31 @@ func Test_str_push(t *testing.T) {
 		}
 	}
 
-	//// Abnormal System
-	//var arr_blank strArray = strArray{}
-	//// Back up the function pointer to os.Exit()
-	//oldExit := osExitForStr
-	//
-	//// Return the function pointer that was backed up to osExit after the test.
-	//defer func() { osExitForStr = oldExit }()
-	//
-	//// When osExit() is executed, the exit code is recorded in the variable called.
-	//var status int
-	//exit := func(code int) {
-	//	status = code
-	//}
-	//osExitForStr = exit
-	//// Execute the method under test and check the results.
-	//arr_blank.pop()
-	//if exp := 1; status != exp {
-	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	//}
+	// Abnormal system
+	var blankArr = strArray{}
+
+	// Change log output destination to buffer.
+	var buf bytes.Buffer
+	log.SetOutput(&buf)
+
+	// Set the flag to 0 because the default is to output the date.
+	defaultFlags := log.Flags()
+	log.SetFlags(0)
+
+	// Return changed content when Test_printLog testing finished.
+	defer func() {
+		log.SetOutput(os.Stderr)
+		log.SetFlags(defaultFlags)
+	}()
+
+	blankArr.push()
+
+	expected := "argument is null"
+	actual := strings.TrimRight(buf.String(), "\n")
+
+	if actual != expected {
+		t.Fatalf("failed! actual = %s, expected = %s", actual, expected)
+	}
 }
 
 func Test_str_unshift(t *testing.T) {
@@ -110,25 +134,31 @@ func Test_str_unshift(t *testing.T) {
 		}
 	}
 
-	//// Abnormal System
-	//var arr_blank strArray = strArray{}
-	//// Back up the function pointer to os.Exit()
-	//oldExit := osExitForStr
-	//
-	//// Return the function pointer that was backed up to osExit after the test.
-	//defer func() { osExitForStr = oldExit }()
-	//
-	//// When osExit() is executed, the exit code is recorded in the variable called.
-	//var status int
-	//exit := func(code int) {
-	//	status = code
-	//}
-	//osExitForStr = exit
-	//// Execute the method under test and check the results.
-	//arr_blank.pop()
-	//if exp := 1; status != exp {
-	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	//}
+	// Abnormal system
+	var blankArr = strArray{}
+
+	// Change log output destination to buffer.
+	var buf bytes.Buffer
+	log.SetOutput(&buf)
+
+	// Set the flag to 0 because the default is to output the date.
+	defaultFlags := log.Flags()
+	log.SetFlags(0)
+
+	// Return changed content when Test_printLog testing finished.
+	defer func() {
+		log.SetOutput(os.Stderr)
+		log.SetFlags(defaultFlags)
+	}()
+
+	blankArr.unshift()
+
+	expected := "argument is null"
+	actual := strings.TrimRight(buf.String(), "\n")
+
+	if actual != expected {
+		t.Fatalf("failed! actual = %s, expected = %s", actual, expected)
+	}
 }
 
 func Test_str_delete(t *testing.T) {
@@ -142,25 +172,31 @@ func Test_str_delete(t *testing.T) {
 		}
 	}
 
-	//// Abnormal System
-	//var arr_blank strArray = strArray{}
-	//// Back up the function pointer to os.Exit()
-	//oldExit := osExitForStr
-	//
-	//// Return the function pointer that was backed up to osExit after the test.
-	//defer func() { osExitForStr = oldExit }()
-	//
-	//// When osExit() is executed, the exit code is recorded in the variable called.
-	//var status int
-	//exit := func(code int) {
-	//	status = code
-	//}
-	//osExitForStr = exit
-	//// Execute the method under test and check the results.
-	//arr_blank.pop()
-	//if exp := 1; status != exp {
-	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	//}
+	// Abnormal system
+	var blankArr = strArray{}
+
+	// Change log output destination to buffer.
+	var buf bytes.Buffer
+	log.SetOutput(&buf)
+
+	// Set the flag to 0 because the default is to output the date.
+	defaultFlags := log.Flags()
+	log.SetFlags(0)
+
+	// Return changed content when Test_printLog testing finished.
+	defer func() {
+		log.SetOutput(os.Stderr)
+		log.SetFlags(defaultFlags)
+	}()
+
+	blankArr.delete("0")
+
+	expected := "strArray is null"
+	actual := strings.TrimRight(buf.String(), "\n")
+
+	if actual != expected {
+		t.Fatalf("failed! actual = %s, expected = %s", actual, expected)
+	}
 }
 
 func Test_str_uniq(t *testing.T) {
@@ -174,25 +210,31 @@ func Test_str_uniq(t *testing.T) {
 		}
 	}
 
-	//// Abnormal System
-	//var arr_blank strArray = strArray{}
-	//// Back up the function pointer to os.Exit()
-	//oldExit := osExitForStr
-	//
-	//// Return the function pointer that was backed up to osExit after the test.
-	//defer func() { osExitForStr = oldExit }()
-	//
-	//// When osExit() is executed, the exit code is recorded in the variable called.
-	//var status int
-	//exit := func(code int) {
-	//	status = code
-	//}
-	//osExitForStr = exit
-	//// Execute the method under test and check the results.
-	//arr_blank.pop()
-	//if exp := 1; status != exp {
-	//	t.Errorf("Expected exit code: %d, status: %d", exp, status)
-	//}
+	// Abnormal system
+	var blankArr = strArray{}
+
+	// Change log output destination to buffer.
+	var buf bytes.Buffer
+	log.SetOutput(&buf)
+
+	// Set the flag to 0 because the default is to output the date.
+	defaultFlags := log.Flags()
+	log.SetFlags(0)
+
+	// Return changed content when Test_printLog testing finished.
+	defer func() {
+		log.SetOutput(os.Stderr)
+		log.SetFlags(defaultFlags)
+	}()
+
+	blankArr.uniq()
+
+	expected := "strArray is null"
+	actual := strings.TrimRight(buf.String(), "\n")
+
+	if actual != expected {
+		t.Fatalf("failed! actual = %s, expected = %s", actual, expected)
+	}
 }
 
 func Test_str_size(t *testing.T) {
