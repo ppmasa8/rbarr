@@ -118,8 +118,7 @@ func Test_int_push(t *testing.T) {
 
 	blankArr.push()
 
-	// TODO change message
-	expected := "intArray is null"
+	expected := "argument is null"
 	actual := strings.TrimRight(buf.String(), "\n")
 
 	if actual != expected {
@@ -157,8 +156,7 @@ func Test_int_unshift(t *testing.T) {
 
 	blankArr.unshift()
 
-	// TODO change message
-	expected := "intArray is null"
+	expected := "argument is null"
 	actual := strings.TrimRight(buf.String(), "\n")
 
 	if actual != expected {

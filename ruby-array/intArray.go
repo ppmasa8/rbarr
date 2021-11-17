@@ -38,8 +38,7 @@ func (p *intArray) shift() int {
 // instance method Array#append
 // push(*obj) -> self
 func (p *intArray) push(val ...int) {
-	// TODO change message
-	if len(*p) == 0 { log.Println("intArray is null") }
+	if len(*p) == 0 { log.Println("argument is null") }
 	slice := *p
 	for _, v := range val {
 		slice = append(slice, v)
@@ -50,8 +49,7 @@ func (p *intArray) push(val ...int) {
 // instance method Array#unshift
 // unshift(*obj) -> self
 func (p *intArray) unshift(val ...int) {
-	// TODO change message
-	if len(*p) == 0 { log.Println("intArray is null") }
+	if len(*p) == 0 { log.Println("argument is null") }
 	slice := *p
 	slice = append(slice[:0], val...)
 	*p = slice
