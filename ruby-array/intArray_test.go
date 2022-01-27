@@ -128,8 +128,8 @@ func Test_int_push(t *testing.T) {
 
 func Test_int_unshift(t *testing.T) {
 	// Normal System
-	var arr = intArray{1, 2, 3 ,4, 5}
-	expect := intArray{6, 7, 8, 1, 2, 3 ,4, 5}
+	var arr = intArray{1, 2, 3, 4, 5}
+	expect := intArray{6, 7, 8, 1, 2, 3, 4, 5}
 	arr.unshift(6, 7, 8)
 	for i, _ := range arr {
 		if arr[i] != expect[i] {
@@ -166,7 +166,7 @@ func Test_int_unshift(t *testing.T) {
 
 func Test_int_delete(t *testing.T) {
 	// Normal System
-	var arr = intArray{1, 2, 3 ,4, 5}
+	var arr = intArray{1, 2, 3, 4, 5}
 	expect := intArray{1, 2, 3, 4}
 	arr.delete(5)
 	for i, _ := range arr {
@@ -204,8 +204,8 @@ func Test_int_delete(t *testing.T) {
 
 func Test_int_uniq(t *testing.T) {
 	// Normal System
-	var arr = intArray{1, 1, 3 ,4, 5}
-	expect := intArray{1, 3 ,4, 5}
+	var arr = intArray{1, 1, 3, 4, 5}
+	expect := intArray{1, 3, 4, 5}
 	arr.uniq()
 	for i, _ := range arr {
 		if arr[i] != expect[i] {

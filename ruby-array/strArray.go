@@ -15,7 +15,7 @@ func (p *strArray) pop() string {
 		return "-1"
 	}
 	slice := *p
-	last  := slice[len(slice)-1]
+	last := slice[len(slice)-1]
 	slice = slice[:len(slice)-1]
 	*p = slice
 	return last
@@ -38,7 +38,9 @@ func (p *strArray) shift() string {
 // instance method Array#append
 // push(*obj) -> self
 func (p *strArray) push(val ...string) {
-	if len(*p) == 0 { log.Println("argument is null") }
+	if len(*p) == 0 {
+		log.Println("argument is null")
+	}
 	slice := *p
 	for _, v := range val {
 		slice = append(slice, v)
@@ -49,7 +51,9 @@ func (p *strArray) push(val ...string) {
 // instance method Array#unshift
 // unshift(*obj) -> self
 func (p *strArray) unshift(val ...string) {
-	if len(*p) == 0 { log.Println("argument is null") }
+	if len(*p) == 0 {
+		log.Println("argument is null")
+	}
 	slice := *p
 	slice = append(slice[:0], val...)
 	*p = slice
@@ -58,8 +62,11 @@ func (p *strArray) unshift(val ...string) {
 // instance method Array#delete
 // delete(val) { ... } -> object
 func (p *strArray) delete(val string) {
-	if len(*p) == 0 { log.Println("strArray is null") }
-	temp := *p; res := strArray{}
+	if len(*p) == 0 {
+		log.Println("strArray is null")
+	}
+	temp := *p
+	res := strArray{}
 	for _, v := range temp {
 		if v == val {
 			continue
@@ -72,7 +79,9 @@ func (p *strArray) delete(val string) {
 // instance method Array#uniq
 // uniq -> Array
 func (p *strArray) uniq() {
-	if len(*p) == 0 { log.Println("strArray is null") }
+	if len(*p) == 0 {
+		log.Println("strArray is null")
+	}
 	temp := *p
 	m := make(map[string]bool)
 	var uniq []string
@@ -89,18 +98,24 @@ func (p *strArray) uniq() {
 // instance method Array#size
 // size -> Integer
 func (p *strArray) size() int {
-	if len(*p) == 0 { return 0 }
+	if len(*p) == 0 {
+		return 0
+	}
 
 	temp := *p
 	var cnt int
-	for range temp { cnt++ }
+	for range temp {
+		cnt++
+	}
 	return cnt
 }
 
 // instance method Array#include
 // include(val) -> bool
 func (p *strArray) include(val string) bool {
-	if len(*p) == 0 { return false }
+	if len(*p) == 0 {
+		return false
+	}
 
 	temp := *p
 	for _, v := range temp {
@@ -114,7 +129,9 @@ func (p *strArray) include(val string) bool {
 // instance method Array#first
 // first -> object | "nil"
 func (p *strArray) first() string {
-	if len(*p) == 0 { return "nil" }
+	if len(*p) == 0 {
+		return "nil"
+	}
 	temp := *p
 	return temp[0]
 }
@@ -122,9 +139,11 @@ func (p *strArray) first() string {
 // instance method Array#last
 // last -> object | "nil"
 func (p *strArray) last() string {
-	if len(*p) == 0 { return "nil" }
+	if len(*p) == 0 {
+		return "nil"
+	}
 	temp := *p
-	return temp[len(temp) - 1]
+	return temp[len(temp)-1]
 }
 
 // instance method Array#combination
@@ -141,13 +160,17 @@ func (p *strArray) combination(n int) [][]string {
 		// Loop for each element of bits
 		for i := 0; i < m; i++ {
 			// Check whether the state of the i-th element of the bit is on or not.
-			if (bits >> uint64(i)) & 1 == 1 { cnt++ }
+			if (bits>>uint64(i))&1 == 1 {
+				cnt++
+			}
 		}
 		// If the number of items that are on is n, then output.
 		if cnt == n {
 			unit := strArray{}
 			for i := 0; i < m; i++ {
-				if (bits >> uint64(i)) & 1 == 1 { unit = append(unit, temp[i]) }
+				if (bits>>uint64(i))&1 == 1 {
+					unit = append(unit, temp[i])
+				}
 			}
 			result = append(result, unit)
 			unit = strArray{}
@@ -219,4 +242,3 @@ func (p *strArray) sort() strArray {
 	*p = temp
 	return *p
 }
-
