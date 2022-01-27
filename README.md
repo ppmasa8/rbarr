@@ -11,7 +11,7 @@ $ go get github.com/ppmasa8/rbarr
 ```
 
 ## Index
-### for []int
+### []int
 - pop
 - shift
 - push
@@ -30,7 +30,7 @@ $ go get github.com/ppmasa8/rbarr
 - empty
 - sort
 
-### for []string
+### []string
 - pop
 - shift
 - push
